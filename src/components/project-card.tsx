@@ -14,6 +14,9 @@ interface Project {
   note?: string;
   technologies: string[];
   image: string;
+  projectUrl?: string;
+  githubUrl?: string;
+  videoUrl?: string;
 }
 
 interface ProjectCardProps extends React.HTMLAttributes<HTMLDivElement> {
