@@ -8,13 +8,13 @@ import {
 
 export default function Header() {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 px-40 py-8 flex flex-row justify-between items-center bg-[#1a1a1a]/80 backdrop-blur-md">
+    <header className="absolute top-0 left-0 right-0 z-50 px-40 py-8 flex flex-row justify-between items-center">
       <h1 className="text-[#f7f7f7] text-2xl font-semibold tracking-tight">
         VPO Tech
       </h1>
       <NavigationMenu
         viewport={false}
-        className="bg-zinc-800/30 px-2 py-1.5 rounded-full"
+        className="bg-zinc-800/90 px-2 py-1.5 rounded-full"
       >
         <NavigationMenuList className="gap-2">
           <NavigationMenuItem>

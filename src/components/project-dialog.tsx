@@ -6,7 +6,14 @@ import {
 } from "./ui/dialog";
 import { Alert, AlertDescription } from "./ui/alert";
 import { Info } from "lucide-react";
-import type { Project } from "../types/project";
+
+interface Project {
+  title: string;
+  description: string;
+  note?: string;
+  technologies: string[];
+  image: string;
+}
 
 interface ProjectDialogProps {
   project: Project;
@@ -14,18 +21,18 @@ interface ProjectDialogProps {
 
 export default function ProjectDialog({ project }: ProjectDialogProps) {
   return (
-    <DialogContent className="sm:max-w-4xl max-h-[90vh] overflow-y-auto">
+    <DialogContent className="sm:max-w-3xl">
       <DialogHeader>
         <DialogTitle className="text-2xl font-semibold">
           {project.title}
         </DialogTitle>
         <DialogDescription className="text-base leading-relaxed pt-2">
-          {project.fullDescription}
+          {project.description}
         </DialogDescription>
       </DialogHeader>
 
       {project.note && (
-        <Alert className="border-blue-200 bg-blue-50 text-blue-900">
+        <Alert className="border-red-200 bg-red-50 text-red-900">
           <Info className="h-4 w-4" />
           <AlertDescription className="text-sm leading-relaxed">
             {project.note}
@@ -34,7 +41,7 @@ export default function ProjectDialog({ project }: ProjectDialogProps) {
       )}
 
       {project.image && (
-        <div className="w-full rounded-lg overflow-hidden shadow-lg">
+        <div className="w-full rounded-lg overflow-hidden">
           <img
             src={project.image}
             alt={project.title}

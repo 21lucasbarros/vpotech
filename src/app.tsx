@@ -2,6 +2,7 @@ import "./app.css";
 import Header from "./components/header";
 import Hero from "./components/hero";
 import Projects from "./components/projects";
+import ScrollToTop from "./components/scroll-to-top";
 
 export default function App() {
   return (
@@ -9,6 +10,7 @@ export default function App() {
       <Header />
       <Hero />
       <Projects />
+      <ScrollToTop />
     </main>
   );
 }
