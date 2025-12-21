@@ -3,7 +3,7 @@ import { scrollToElement } from "../utils/scrollToElement";
 export default function Header() {
   return (
     <header className="px-40 py-8 flex flex-row justify-between items-center baseline">
-      <h1 className="text-[#f7f7f7]"></h1>
+      <h1 className="text-[#f7f7f7] text-2xl font-bold">VPO Tech</h1>
       <nav className="bg-zinc-400/50 px-8 py-2 rounded-2xl">
         <ul className="flex justify-center gap-12 items-center">
           <li>
