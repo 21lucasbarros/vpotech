@@ -35,8 +35,8 @@ export default function Projects() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
             viewport={{ once: true }}
-            className={`flex justify-center md:${
-              index % 2 === 0 ? "justify-start" : "justify-end"
+            className={`flex justify-center ${
+              index % 2 === 0 ? "md:justify-start" : "md:justify-end"
             }`}
           >
             <Dialog>
