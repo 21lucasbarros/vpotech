@@ -2,12 +2,84 @@
 
 import { TypeAnimation } from "react-type-animation";
 import { Button } from "./ui/button";
-import { Send } from "lucide-react";
-import { motion } from "motion/react";
-import { useState } from "react";
+import {
+  Send,
+  ChevronDown,
+  CheckCircle2,
+  Briefcase,
+  Award,
+} from "lucide-react";
+import { motion, useInView, useMotionValue, useSpring } from "motion/react";
+import { useState, useEffect, useRef } from "react";
+
+function Counter({
+  value,
+  suffix = "",
+  speed = "normal",
+}: {
+  value: number;
+  suffix?: string;
+  speed?: "fast" | "normal";
+}) {
+  const ref = useRef<HTMLSpanElement>(null);
+  const motionValue = useMotionValue(0);
+  const springValue = useSpring(motionValue, {
+    damping: speed === "fast" ? 40 : 80,
+    stiffness: speed === "fast" ? 40 : 20,
+  });
+  const isInView = useInView(ref, { once: true, margin: "0px" });
+
+  useEffect(() => {
+    if (isInView) {
+      // delay para sincronizar com a animação do card
+      const timeout = setTimeout(() => {
+        motionValue.set(value);
+      }, 400);
+      return () => clearTimeout(timeout);
+    }
+  }, [motionValue, isInView, value]);
+
+  useEffect(() => {
+    springValue.on("change", (latest) => {
+      if (ref.current) {
+        ref.current.textContent = Math.floor(latest).toString();
+      }
+    });
+  }, [springValue]);
+
+  return (
+    <span ref={ref} className="tabular-nums">
+      0
+    </span>
+  );
+}
 
 export default function Hero() {
   const [isHovered, setIsHovered] = useState(false);
+
+  const stats = [
+    {
+      value: 4,
+      suffix: "",
+      label: "Projetos Entregues",
+      icon: Briefcase,
+      speed: "fast" as const,
+    },
+    {
+      value: 100,
+      suffix: "%",
+      label: "Aprovação dos Clientes",
+      icon: CheckCircle2,
+      speed: "normal" as const,
+    },
+    {
+      value: 3,
+      suffix: "+",
+      label: "Anos de Experiência",
+      icon: Award,
+      speed: "fast" as const,
+    },
+  ];
 
   return (
     <motion.section
@@ -21,17 +93,24 @@ export default function Hero() {
         <div className="h-full w-full bg-[linear-gradient(to_right,#f7f7f7_1px,transparent_1px),linear-gradient(to_bottom,#f7f7f7_1px,transparent_1px)] bg-size-[40px_40px]"></div>
       </div>
 
+      <div className="absolute top-0 right-0 w-150 h-150 bg-linear-to-bl from-blue-500/5 via-transparent to-transparent" />
+      <div className="absolute bottom-0 left-0 w-125 h-125 bg-linear-to-tr from-blue-600/5 via-transparent to-transparent" />
+
+      <div className="absolute top-1/4 right-0 w-96 h-px bg-linear-to-l from-blue-400/20 to-transparent" />
+      <div className="absolute top-1/3 right-20 w-64 h-px bg-linear-to-l from-blue-300/15 to-transparent" />
+      <div className="absolute bottom-1/3 left-0 w-80 h-px bg-linear-to-r from-blue-400/20 to-transparent" />
+
       <div className="absolute inset-x-0 bottom-0 h-32 bg-linear-to-t from-[#1a1a1a] to-transparent z-10"></div>
 
       <div className="relative z-10 px-4 sm:px-8 lg:px-40 max-w-5xl">
         <h1 className="text-5xl md:text-7xl font-semibold mb-4 leading-tight tracking-tight text-[#f7f7f7] animate-in fade-in slide-in-from-bottom-4 duration-700">
-          Soluções Digitais com{" "}
-          <span className="bg-linear-to-r from-blue-200 via-blue-400 to-blue-500 bg-clip-text text-transparent">
-            Precisão
+          Soluções digitais com{" "}
+          <span className="font-playfair italic bg-linear-to-r from-blue-200 via-blue-400 to-blue-500 bg-clip-text text-transparent">
+            precisão
           </span>{" "}
           e{" "}
-          <span className="bg-linear-to-r from-blue-200 via-blue-400 to-blue-500 bg-clip-text text-transparent">
-            Propósito
+          <span className="font-playfair italic bg-linear-to-r from-blue-200 via-blue-400 to-blue-500 bg-clip-text text-transparent">
+            propósito
           </span>
         </h1>
 
@@ -93,7 +172,50 @@ export default function Hero() {
             </motion.div>
           </a>
         </Button>
+
+        <div className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-4">
+          {stats.map((stat, index) => (
+            <motion.div
+              key={stat.label}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8 + index * 0.15, duration: 0.6 }}
+              className="bg-[#f7f7f7]/5 border border-[#f7f7f7]/10 rounded-lg p-6 hover:border-[#f7f7f7]/20 transition-colors duration-300"
+            >
+              <stat.icon className="w-6 h-6 text-blue-400/80 mb-3" />
+              <div className="text-3xl font-semibold text-[#f7f7f7] mb-1 flex items-baseline gap-1">
+                <Counter value={stat.value} speed={stat.speed} />
+                <span>{stat.suffix}</span>
+              </div>
+              <p className="text-[#f7f7f7]/50 text-sm font-light">
+                {stat.label}
+              </p>
+            </motion.div>
+          ))}
+        </div>
       </div>
+
+      <motion.div
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 cursor-pointer"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.5, duration: 0.8 }}
+        onClick={() => {
+          document
+            .querySelector("#projects")
+            ?.scrollIntoView({ behavior: "smooth" });
+        }}
+      >
+        <span className="text-[#f7f7f7]/40 text-xs font-light tracking-wider uppercase">
+          Role para explorar
+        </span>
+        <motion.div
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <ChevronDown className="w-6 h-6 text-[#f7f7f7]/40" />
+        </motion.div>
+      </motion.div>
     </motion.section>
   );
 }
