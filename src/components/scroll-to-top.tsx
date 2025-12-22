@@ -1,3 +1,5 @@
+"use client";
+
 import { ArrowUp } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { useScrollVisibility } from "../utils/useScrollVisibility";

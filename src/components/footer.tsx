@@ -1,3 +1,5 @@
+"use client";
+
 import { scrollToElement } from "../utils/scrollToElement";
 
 export default function Footer() {

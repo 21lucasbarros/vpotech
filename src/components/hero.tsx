@@ -1,3 +1,5 @@
+"use client";
+
 import { TypeAnimation } from "react-type-animation";
 import { Button } from "./ui/button";
 import { Send } from "lucide-react";

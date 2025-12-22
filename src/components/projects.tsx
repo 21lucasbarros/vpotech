@@ -1,3 +1,5 @@
+"use client";
+
 import { Dialog, DialogTrigger } from "./ui/dialog";
 import { motion } from "motion/react";
 import ProjectCard from "./project-card";
