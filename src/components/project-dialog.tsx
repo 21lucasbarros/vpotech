@@ -31,12 +31,12 @@ interface ProjectDialogProps {
 
 export default function ProjectDialog({ project }: ProjectDialogProps) {
   return (
-    <DialogContent className="sm:max-w-3xl">
+    <DialogContent className="max-w-[95vw] sm:max-w-3xl max-h-[90vh] overflow-y-auto">
       <DialogHeader>
-        <DialogTitle className="text-2xl font-semibold">
+        <DialogTitle className="text-xl sm:text-2xl font-semibold">
           {project.title}
         </DialogTitle>
-        <DialogDescription className="text-base leading-relaxed pt-2">
+        <DialogDescription className="text-sm sm:text-base leading-relaxed pt-2">
           {project.description}
         </DialogDescription>
       </DialogHeader>
@@ -100,14 +100,14 @@ export default function ProjectDialog({ project }: ProjectDialogProps) {
       ) : null}
 
       <div className="space-y-3 pt-4">
-        <h3 className="font-semibold text-base text-zinc-900">
+        <h3 className="font-semibold text-sm sm:text-base text-zinc-900">
           Tecnologias Utilizadas
         </h3>
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-1.5 sm:gap-2">
           {project.technologies.map((tech) => (
             <span
               key={tech}
-              className="px-3 py-1.5 text-xs bg-zinc-100 text-zinc-700 rounded-md font-medium border border-zinc-200 hover:bg-zinc-200 transition-colors"
+              className="px-2 sm:px-3 py-1 sm:py-1.5 text-[10px] sm:text-xs bg-zinc-100 text-zinc-700 rounded-md font-medium border border-zinc-200 hover:bg-zinc-200 transition-colors"
             >
               {tech}
             </span>
@@ -116,16 +116,16 @@ export default function ProjectDialog({ project }: ProjectDialogProps) {
       </div>
 
       {(project.projectUrl || project.githubUrl) && (
-        <div className="flex flex-wrap gap-3 pt-6 border-t border-zinc-200 mt-2">
+        <div className="flex flex-wrap gap-2 sm:gap-3 pt-4 sm:pt-6 border-t border-zinc-200 mt-2">
           {project.projectUrl && (
             <a
               href={project.projectUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative inline-flex items-center gap-2 px-5 py-2.5 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-300 text-sm font-medium shadow-sm hover:shadow-md overflow-hidden"
+              className="group relative inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-5 py-2 sm:py-2.5 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-300 text-xs sm:text-sm font-medium shadow-sm hover:shadow-md overflow-hidden flex-1 sm:flex-initial justify-center"
             >
               <span className="absolute inset-0 bg-linear-to-r from-blue-600 to-blue-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <ExternalLink className="w-4 h-4 relative z-10 group-hover:scale-110 transition-transform duration-300" />
+              <ExternalLink className="w-3 h-3 sm:w-4 sm:h-4 relative z-10 group-hover:scale-110 transition-transform duration-300" />
               <span className="relative z-10">Ver Projeto</span>
             </a>
           )}
@@ -134,10 +134,10 @@ export default function ProjectDialog({ project }: ProjectDialogProps) {
               href={project.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative inline-flex items-center gap-2 px-5 py-2.5 bg-[#1a1a1a] text-white rounded-lg hover:bg-zinc-900 transition-all duration-300 text-sm font-medium shadow-sm hover:shadow-md overflow-hidden"
+              className="group relative inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-5 py-2 sm:py-2.5 bg-[#1a1a1a] text-white rounded-lg hover:bg-zinc-900 transition-all duration-300 text-xs sm:text-sm font-medium shadow-sm hover:shadow-md overflow-hidden flex-1 sm:flex-initial justify-center"
             >
               <span className="absolute inset-0 bg-linear-to-r from-[#1a1a1a] to-zinc-900 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <Github className="w-4 h-4 relative z-10 group-hover:rotate-12 transition-transform duration-300" />
+              <Github className="w-3 h-3 sm:w-4 sm:h-4 relative z-10 group-hover:rotate-12 transition-transform duration-300" />
               <span className="relative z-10">Repositório</span>
             </a>
           )}

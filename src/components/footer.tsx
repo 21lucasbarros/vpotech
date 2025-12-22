@@ -47,16 +47,28 @@ export default function Footer() {
 
         <div className="h-px bg-linear-to-r from-transparent via-white/20 to-transparent mb-8" />
 
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-[#f7f7f7]/50 text-xs text-center md:text-left">
-            © {currentYear} VPO Tech. Todos os direitos reservados.
-          </p>
-          <div className="text-[#f7f7f7]/50 text-xs flex items-center gap-3">
-            <span className="px-2 py-1 rounded bg-[#f7f7f7]/5 border border-[#f7f7f7]/10">
-              v1.0.0
-            </span>
-            <span className="w-1 h-1 bg-[#f7f7f7]/30 rounded-full" />
-            <span>Made in 🇧🇷 Brazil</span>
+        <div className="flex flex-col gap-4">
+          <blockquote className="md:hidden">
+            <p className="text-[#f7f7f7]/40 text-sm italic text-center">
+              "A única maneira de fazer um ótimo trabalho é amar o que você
+              faz." — Steve Jobs
+            </p>
+          </blockquote>
+
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-[#f7f7f7]/50 text-xs text-center md:text-left">
+              © {currentYear} VPO Tech. Todos os direitos reservados.
+            </p>
+            <blockquote className="hidden md:block">
+              <p className="text-[#f7f7f7]/40 text-sm italic text-center">
+                "A única maneira de fazer um ótimo trabalho é amar o que você
+                faz." — Steve Jobs
+              </p>
+            </blockquote>
+            <div className="text-[#f7f7f7]/50 text-xs flex items-center gap-3">
+              <span className="w-1 h-1 bg-[#f7f7f7]/30 rounded-full" />
+              <span>Feito no 🇧🇷 Brasil</span>
+            </div>
           </div>
         </div>
       </div>
