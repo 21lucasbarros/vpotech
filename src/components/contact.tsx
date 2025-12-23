@@ -8,6 +8,7 @@ import { Send, CheckCircle2 } from "lucide-react";
 import { motion } from "motion/react";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
+import { Label } from "./ui/label";
 
 const contactSchema = z.object({
   name: z.string().min(1, "Nome é obrigatório"),
@@ -61,10 +62,7 @@ export function Contact() {
   };
 
   return (
-    <section
-      id="contact"
-      className="min-h-screen py-12 sm:py-16 px-4 sm:px-8 lg:px-20"
-    >
+    <section id="contact" className="py-12 sm:py-16 px-4 sm:px-8 lg:px-20">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -80,8 +78,7 @@ export function Contact() {
         </p>
       </motion.div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 max-w-6xl">
-        {/* Informações de Contato */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-48 max-w-7xl">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -120,7 +117,6 @@ export function Contact() {
           </div>
         </motion.div>
 
-        {/* Formulário */}
         <motion.div
           initial={{ opacity: 0, x: 20 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -134,12 +130,12 @@ export function Contact() {
               transition={{ duration: 0.4, delay: 0.4 }}
               viewport={{ once: true }}
             >
-              <label
+              <Label
                 htmlFor="name"
                 className="block text-sm font-medium text-[#f7f7f7]/70 mb-2"
               >
                 Nome Completo
-              </label>
+              </Label>
               <Input
                 id="name"
                 type="text"
@@ -166,12 +162,12 @@ export function Contact() {
               transition={{ duration: 0.4, delay: 0.45 }}
               viewport={{ once: true }}
             >
-              <label
+              <Label
                 htmlFor="email"
                 className="block text-sm font-medium text-[#f7f7f7]/70 mb-2"
               >
                 Email
-              </label>
+              </Label>
               <Input
                 id="email"
                 type="email"
@@ -198,16 +194,16 @@ export function Contact() {
               transition={{ duration: 0.4, delay: 0.5 }}
               viewport={{ once: true }}
             >
-              <label
+              <Label
                 htmlFor="message"
                 className="block text-sm font-medium text-[#f7f7f7]/70 mb-2"
               >
                 Mensagem
-              </label>
+              </Label>
               <Textarea
                 id="message"
                 placeholder="Descreva seu projeto e como podemos ajudar..."
-                className={`min-h-[140px] bg-[#1a1a1a] border-[#f7f7f7]/20 text-[#f7f7f7] placeholder:text-[#f7f7f7]/30 focus-visible:border-blue-400 focus-visible:ring-1 focus-visible:ring-blue-400/50 transition-all resize-none ${
+                className={`min-h-35 bg-[#1a1a1a] border-[#f7f7f7]/20 text-[#f7f7f7] placeholder:text-[#f7f7f7]/30 focus-visible:border-blue-400 focus-visible:ring-1 focus-visible:ring-blue-400/50 transition-all resize-none ${
                   errors.message ? "border-red-400/50" : ""
                 }`}
                 {...register("message")}
@@ -228,14 +224,14 @@ export function Contact() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.55 }}
               viewport={{ once: true }}
-              className="pt-2"
+              className="pt-2 flex justify-center"
             >
               <motion.button
                 type="submit"
                 disabled={isSubmitting || isSubmitted}
                 whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
                 whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
-                className="w-full sm:w-auto px-8 py-3 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-medium rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                className="group w-full sm:w-auto px-8 py-3 bg-linear-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white font-medium rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
               >
                 {isSubmitting ? (
                   <>
@@ -264,7 +260,9 @@ export function Contact() {
                 ) : (
                   <>
                     <span>Enviar Mensagem</span>
-                    <Send className="w-4 h-4" strokeWidth={2} />
+                    <motion.div className="group-hover:translate-x-0.75 group-hover:-translate-y-0.75 transition-transform duration-200">
+                      <Send className="w-4 h-4" strokeWidth={2} />
+                    </motion.div>
                   </>
                 )}
               </motion.button>
