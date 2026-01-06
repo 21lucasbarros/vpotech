@@ -12,6 +12,7 @@ import {
   SiSass,
   SiAngular,
   SiVuedotjs,
+  SiSvelte,
   SiTauri,
   SiNodedotjs,
   SiBun,
@@ -34,6 +35,7 @@ const stacks = {
     { name: "SCSS", icon: SiSass, color: "#CC6699" },
     { name: "Angular", icon: SiAngular, color: "#DD0031" },
     { name: "Vue.js", icon: SiVuedotjs, color: "#4FC08D" },
+    { name: "Svelte", icon: SiSvelte, color: "#FF3E00" },
     { name: "Tauri", icon: SiTauri, color: "#FFC131" },
   ],
   backend: [

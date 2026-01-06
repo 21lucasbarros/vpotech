@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { motion, useInView, useMotionValue, useSpring } from "motion/react";
 import { useState, useEffect, useRef } from "react";
+import { scrollToElement } from "@/utils/scrollToElement";
 
 function Counter({
   value,
@@ -148,6 +149,7 @@ export default function Hero() {
         >
           <a
             href="#contact"
+            onClick={scrollToElement}
             className="flex items-center justify-center gap-2"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
