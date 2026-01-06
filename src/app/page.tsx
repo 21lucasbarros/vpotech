@@ -7,6 +7,8 @@ import Footer from "@/components/footer";
 import About from "@/components/about";
 import Contact from "@/components/contact";
 import Stacks from "@/components/stacks";
+import Services from "@/components/services";
+import Faq from "@/components/faq";
 
 export default function Home() {
   return (
@@ -14,8 +16,10 @@ export default function Home() {
       <Header />
       <Hero />
       <About />
+      <Services />
       <Stacks />
       <Projects />
+      <Faq />
       <Contact />
       <ScrollToTop />
       <Footer />
