@@ -90,7 +90,6 @@ export default function Contact() {
       </motion.div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-20 max-w-lg xs:max-w-xl sm:max-w-2xl md:max-w-3xl lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto">
-        {/* Info */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -103,10 +102,10 @@ export default function Contact() {
               Email
             </p>
             <a
-              href="mailto:contato@vpotech.com"
+              href="mailto:devlucasbarros@gmail.com"
               className="text-lg md:text-xl text-[#f7f7f7] hover:text-blue-400 transition-colors"
             >
-              contato@vpotech.com
+              devlucasbarros@gmail.com
             </a>
           </div>
 
@@ -120,7 +119,6 @@ export default function Contact() {
           </div>
         </motion.div>
 
-        {/* Form */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
