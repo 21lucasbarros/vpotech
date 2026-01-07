@@ -27,7 +27,7 @@ export default function Projects() {
         </p>
       </motion.div>
 
-      <div className="space-y-6 2xl:space-y-10 3xl:space-y-14 4xl:space-y-20">
+      <div className="space-y-6 2xl:space-y-10 3xl:space-y-14 4xl:space-y-20 max-w-screen-2xl w-full mx-auto">
         {projects.map((project, index) => (
           <motion.div
             key={project.title}

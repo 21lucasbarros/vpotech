@@ -30,7 +30,7 @@ export default function About() {
       id="about"
       className="py-24 sm:py-32 px-4 sm:px-8 lg:px-20 2xl:px-48 3xl:px-72 4xl:px-96 bg-[#1a1a1a]"
     >
-      <div className="max-w-6xl 2xl:max-w-7xl 3xl:max-w-8xl 4xl:max-w-9xl mx-auto">
+      <div className="max-w-6xl 2xl:max-w-screen-2xl w-full mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

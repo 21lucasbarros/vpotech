@@ -52,7 +52,7 @@ export default function Faq() {
       id="faq"
       className="py-12 sm:py-16 px-4 sm:px-8 lg:px-20 2xl:px-48 3xl:px-72 4xl:px-96"
     >
-      <div className="flex flex-col lg:flex-row-reverse lg:justify-between lg:gap-20 2xl:gap-32 3xl:gap-40 4xl:gap-56">
+      <div className="flex flex-col lg:flex-row-reverse lg:justify-between lg:gap-20 2xl:gap-32 3xl:gap-40 4xl:gap-56 max-w-screen-2xl w-full mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

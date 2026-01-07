@@ -104,9 +104,24 @@ export default function Hero() {
 
       <div className="absolute inset-x-0 bottom-0 h-32 bg-linear-to-t from-[#1a1a1a] to-transparent z-10"></div>
 
-      <div className="relative z-10 px-4 sm:px-8 lg:px-20 max-w-5xl w-full">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-semibold mb-4 leading-tight tracking-tight text-[#f7f7f7] animate-in fade-in slide-in-from-bottom-4 duration-700">
-          Soluções digitais com{" "}
+      <div
+        className="relative z-10 px-4 sm:px-8 lg:px-20 max-w-5xl 2xl:max-w-screen-2xl w-full ml-0 mr-auto text-left"
+        style={{
+          paddingTop: "clamp(4.5rem, 12vw, 10rem)",
+          paddingBottom: "clamp(5rem, 12vw, 8rem)", // aumenta o padding inferior para garantir espaço para o botão
+        }}
+      >
+        <h1
+          className="font-semibold mb-4 leading-tight tracking-tight text-[#f7f7f7] animate-in fade-in slide-in-from-bottom-4 duration-700 max-w-full wrap-break-word text-left"
+          style={{
+            fontSize: "clamp(2.2rem, 6vw, 4.5rem)",
+            lineHeight: 1.08,
+            wordBreak: "break-word",
+            whiteSpace: "normal",
+          }}
+        >
+          Soluções digitais com
+          <br className="hidden md:block" />{" "}
           <span className="font-playfair italic bg-linear-to-r from-blue-200 via-blue-400 to-blue-500 bg-clip-text text-transparent">
             precisão
           </span>{" "}
@@ -201,7 +216,10 @@ export default function Hero() {
       </div>
 
       <motion.div
-        className="absolute bottom-4 sm:bottom-8 lg:bottom-3 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-1 sm:gap-2 lg:gap-1 cursor-pointer"
+        className="absolute left-1/2 -translate-x-1/2 z-30 flex flex-col items-center gap-1 sm:gap-2 lg:gap-1 cursor-pointer w-max"
+        style={{
+          bottom: "min(2vw, 1.5rem)",
+        }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 0.8 }}
