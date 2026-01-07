@@ -81,30 +81,39 @@ export default function Stacks() {
           <div className="absolute right-0 top-0 bottom-0 w-20 bg-linear-to-l from-[#1a1a1a] to-transparent z-10 pointer-events-none" />
 
           <div className="flex overflow-hidden">
-            <motion.div
-              className="flex gap-8 py-4"
-              animate={{ x: ["0%", "-50%"] }}
-              transition={{
-                duration: 25,
-                repeat: Infinity,
-                ease: "linear",
+            <div
+              className="flex gap-8 py-4 animate-scroll"
+              style={{
+                animation: "scroll 30s linear infinite",
               }}
             >
-              {[...allStacks, ...allStacks].map((stack, index) => (
-                <div
-                  key={`${stack.name}-${index}`}
-                  className="flex items-center gap-3 px-5 py-3 bg-[#f7f7f7]/5 border border-[#f7f7f7]/10 rounded-full whitespace-nowrap hover:border-[#f7f7f7]/20 transition-colors"
-                >
-                  <stack.icon
-                    className="w-5 h-5 shrink-0"
-                    style={{ color: stack.color }}
-                  />
-                  <span className="text-[#f7f7f7]/70 text-sm font-medium">
-                    {stack.name}
-                  </span>
-                </div>
-              ))}
-            </motion.div>
+              {[...allStacks, ...allStacks, ...allStacks].map(
+                (stack, index) => (
+                  <div
+                    key={`${stack.name}-${index}`}
+                    className="flex items-center gap-3 px-5 py-3 bg-[#f7f7f7]/5 border border-[#f7f7f7]/10 rounded-full whitespace-nowrap hover:border-[#f7f7f7]/20 transition-colors"
+                  >
+                    <stack.icon
+                      className="w-5 h-5 shrink-0"
+                      style={{ color: stack.color }}
+                    />
+                    <span className="text-[#f7f7f7]/70 text-sm font-medium">
+                      {stack.name}
+                    </span>
+                  </div>
+                )
+              )}
+            </div>
+            <style jsx>{`
+              @keyframes scroll {
+                0% {
+                  transform: translateX(0);
+                }
+                100% {
+                  transform: translateX(-33.333%);
+                }
+              }
+            `}</style>
           </div>
         </div>
 

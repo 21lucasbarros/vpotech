@@ -16,8 +16,7 @@ export const projects = [
       "Nodemailer",
     ],
     image: "/imagem/projetos/bricks.png",
-    projectUrl: "https://bricks-ecommerce.vercel.app",
-    githubUrl: "https://github.com/vpotech/bricks-ecommerce",
+    projectUrl: "https://oficialbricks.com.br",
   },
   {
     title: "Validy - Sistema de Certificados Digitais",
@@ -47,7 +46,7 @@ export const projects = [
       "Zod",
     ],
     image: "/imagem/projetos/api.png",
-    githubUrl: "https://github.com/vpotech/validy-api",
+    githubUrl: "https://github.com/21lucasbarros/validy-api",
   },
   {
     title: "R&A Comunicação Visual",
@@ -63,7 +62,6 @@ export const projects = [
       "Zod",
     ],
     image: "/imagem/projetos/ra-comunicacao.png",
-    projectUrl: "https://ra-comunicacao.com.br",
-    githubUrl: "https://github.com/vpotech/ra-comunicacao",
+    projectUrl: "https://projeto-ilha-outdoor.vercel.app/",
   },
 ];
