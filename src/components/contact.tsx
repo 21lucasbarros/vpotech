@@ -65,35 +65,38 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-12 sm:py-16 px-4 sm:px-8 lg:px-20">
+    <section
+      id="contact"
+      className="py-10 px-2 sm:py-14 sm:px-4 md:py-16 md:px-8 lg:px-20 2xl:px-48 2xl:py-24"
+    >
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
-        className="text-center mb-12"
+        className="text-center mb-10 md:mb-12"
       >
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-[#f7f7f7] mb-4 tracking-tight overflow-visible">
+        <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-semibold text-[#f7f7f7] mb-3 md:mb-4 tracking-tight overflow-visible">
           Vamos construir o{" "}
           <span className="font-playfair italic bg-linear-to-r from-blue-200 via-blue-400 to-blue-500 bg-clip-text text-transparent pl-1">
             futuro
           </span>{" "}
           juntos!
         </h2>
-        <p className="text-base sm:text-lg text-[#f7f7f7]/60 max-w-lg mx-auto font-light">
+        <p className="text-sm xs:text-base sm:text-lg text-[#f7f7f7]/60 max-w-xs xs:max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl 2xl:max-w-4xl mx-auto font-light">
           Compartilhe sua visão conosco. Transformamos ideias em soluções
           digitais que fazem a diferença.
         </p>
       </motion.div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 max-w-6xl">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-20 max-w-lg xs:max-w-xl sm:max-w-2xl md:max-w-3xl lg:max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto">
         {/* Info */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
           viewport={{ once: true }}
-          className="space-y-8"
+          className="space-y-6 md:space-y-8"
         >
           <div>
             <p className="text-xs text-[#f7f7f7]/40 uppercase tracking-widest mb-2">
@@ -101,7 +104,7 @@ export default function Contact() {
             </p>
             <a
               href="mailto:contato@vpotech.com"
-              className="text-xl text-[#f7f7f7] hover:text-blue-400 transition-colors"
+              className="text-lg md:text-xl text-[#f7f7f7] hover:text-blue-400 transition-colors"
             >
               contato@vpotech.com
             </a>
@@ -111,7 +114,9 @@ export default function Contact() {
             <p className="text-xs text-[#f7f7f7]/40 uppercase tracking-widest mb-2">
               Localização
             </p>
-            <p className="text-xl text-[#f7f7f7]/70">Santos, São Paulo</p>
+            <p className="text-lg md:text-xl text-[#f7f7f7]/70">
+              Santos, São Paulo
+            </p>
           </div>
         </motion.div>
 
@@ -122,7 +127,10 @@ export default function Contact() {
           transition={{ duration: 0.5, delay: 0.3 }}
           viewport={{ once: true }}
         >
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
+          <form
+            onSubmit={handleSubmit(onSubmit)}
+            className="space-y-4 md:space-y-5"
+          >
             <div>
               <Input
                 id="name"

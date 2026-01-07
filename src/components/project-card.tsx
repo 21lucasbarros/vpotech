@@ -21,10 +21,10 @@ const ProjectCard = React.forwardRef<HTMLDivElement, ProjectCardProps>(
     return (
       <div
         ref={ref}
-        className="group flex items-center gap-6 py-6 border-b border-[#f7f7f7]/10 cursor-pointer max-w-3xl"
+        className="group flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-6 py-4 sm:py-6 border-b border-[#f7f7f7]/10 cursor-pointer max-w-full sm:max-w-3xl"
         {...props}
       >
-        <div className="relative w-96 h-56 rounded-xl overflow-hidden shrink-0">
+        <div className="relative w-full h-44 sm:w-96 sm:h-56 rounded-xl overflow-hidden shrink-0 mb-3 sm:mb-0">
           {project.image ? (
             <img
               src={project.image}
@@ -40,11 +40,11 @@ const ProjectCard = React.forwardRef<HTMLDivElement, ProjectCardProps>(
           )}
         </div>
 
-        <div className="flex-1 min-w-0">
-          <h3 className="text-lg font-medium text-[#f7f7f7] group-hover:text-blue-400 transition-colors mb-1">
+        <div className="flex-1 min-w-0 flex flex-col justify-center">
+          <h3 className="text-base sm:text-lg font-medium text-[#f7f7f7] group-hover:text-blue-400 transition-colors mb-1">
             {project.title}
           </h3>
-          <p className="text-sm text-[#f7f7f7]/40 mb-3">
+          <p className="text-xs sm:text-sm text-[#f7f7f7]/40 mb-2 sm:mb-3">
             {project.description}
           </p>
           <span className="inline-flex items-center gap-1.5 text-xs text-[#f7f7f7]/30 group-hover:text-blue-400 transition-colors">

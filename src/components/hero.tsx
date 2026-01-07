@@ -116,8 +116,10 @@ export default function Hero() {
           </span>
         </h1>
 
-        <div className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 flex flex-col sm:flex-row items-start sm:items-center gap-1 sm:gap-0">
-          <span className="text-[#f7f7f7]/70 font-light">Atuamos com</span>
+        <div className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 flex flex-row items-center gap-2 flex-wrap">
+          <span className="text-[#f7f7f7]/70 font-light whitespace-nowrap">
+            Atuamos com
+          </span>
           <TypeAnimation
             sequence={[
               "engenharia de software",
@@ -131,7 +133,7 @@ export default function Hero() {
             ]}
             wrapper="span"
             speed={50}
-            className="sm:ml-3 font-medium text-blue-400"
+            className="font-medium text-blue-400"
             repeat={Infinity}
           />
         </div>
