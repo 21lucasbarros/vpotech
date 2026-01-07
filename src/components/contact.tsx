@@ -20,6 +20,7 @@ type FormData = z.infer<typeof contactSchema>;
 export default function Contact() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
   const {
     register,
@@ -177,6 +178,8 @@ export default function Contact() {
               disabled={isSubmitting || isSubmitted}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
               className="w-full h-12 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
             >
               {isSubmitting ? (
@@ -189,7 +192,23 @@ export default function Contact() {
               ) : (
                 <>
                   <span>Enviar</span>
-                  <Send className="w-4 h-4" />
+                  <motion.div
+                    animate={
+                      isHovered
+                        ? {
+                            x: [0, 4, 6],
+                            y: [0, -4, -6],
+                            rotate: [0, 5, 8],
+                          }
+                        : { x: 0, y: 0, rotate: 0 }
+                    }
+                    transition={{
+                      duration: 0.4,
+                      ease: [0.25, 0.1, 0.25, 1],
+                    }}
+                  >
+                    <Send className="w-4 h-4" />
+                  </motion.div>
                 </>
               )}
             </motion.button>

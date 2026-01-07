@@ -51,7 +51,7 @@ export const projects = [
   {
     title: "R&A Comunicação Visual",
     description:
-      "Landing page apresentando serviços de comunicação visual. Design limpo, responsivo e navegação intuitiva.",
+      "Landing page desenvolvida para a R&A Comunicação Visual, empresa especializada em mídia exterior desde 1999. O site apresenta os serviços de painéis publicitários, locais estratégicos em Santos e São Vicente, e destaca os diferenciais da empresa em responsabilidade ambiental e impacto social.",
     technologies: [
       "React",
       "TypeScript",

@@ -12,6 +12,7 @@ import {
 import { motion, useInView, useMotionValue, useSpring } from "motion/react";
 import { useState, useEffect, useRef } from "react";
 import { scrollToElement } from "@/utils/scrollToElement";
+import { projects } from "@/data/projects";
 
 function Counter({
   value,
@@ -60,7 +61,7 @@ export default function Hero() {
 
   const stats = [
     {
-      value: 4,
+      value: projects.length,
       suffix: "",
       label: "Projetos Entregues",
       icon: Briefcase,
@@ -103,7 +104,7 @@ export default function Hero() {
 
       <div className="absolute inset-x-0 bottom-0 h-32 bg-linear-to-t from-[#1a1a1a] to-transparent z-10"></div>
 
-      <div className="relative z-10 px-4 sm:px-8 lg:px-40 max-w-5xl w-full">
+      <div className="relative z-10 px-4 sm:px-8 lg:px-20 max-w-5xl w-full">
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-semibold mb-4 leading-tight tracking-tight text-[#f7f7f7] animate-in fade-in slide-in-from-bottom-4 duration-700">
           Soluções digitais com{" "}
           <span className="font-playfair italic bg-linear-to-r from-blue-200 via-blue-400 to-blue-500 bg-clip-text text-transparent">
@@ -175,7 +176,7 @@ export default function Hero() {
           </a>
         </Button>
 
-        <div className="mt-12 sm:mt-16 grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
+        <div className="mt-12 sm:mt-16 lg:mt-10 grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
           {stats.map((stat, index) => (
             <motion.div
               key={stat.label}
@@ -198,7 +199,7 @@ export default function Hero() {
       </div>
 
       <motion.div
-        className="absolute bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-1 sm:gap-2 cursor-pointer"
+        className="absolute bottom-4 sm:bottom-8 lg:bottom-3 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-1 sm:gap-2 lg:gap-1 cursor-pointer"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 0.8 }}
