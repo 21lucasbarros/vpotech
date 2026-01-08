@@ -61,9 +61,9 @@ export default function About() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="group"
+              className="group h-full flex flex-col"
             >
-              <div className="relative">
+              <div className="relative flex flex-col flex-1">
                 <div className="mb-6">
                   <div className="w-12 h-12 rounded-2xl bg-[#f7f7f7] flex items-center justify-center group-hover:bg-blue-500 transition-colors duration-300">
                     <item.icon
@@ -81,6 +81,7 @@ export default function About() {
                   {item.description}
                 </p>
 
+                <div className="flex-1" />
                 <div className="mt-6 h-px bg-[#f7f7f7]/10 group-hover:bg-blue-500/30 transition-colors duration-300" />
               </div>
             </motion.div>
