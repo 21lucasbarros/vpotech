@@ -225,7 +225,7 @@ export default function Hero() {
         transition={{ delay: 1.5, duration: 0.8 }}
         onClick={() => {
           document
-            .querySelector("#projects")
+            .querySelector("#about")
             ?.scrollIntoView({ behavior: "smooth" });
         }}
       >
