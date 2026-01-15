@@ -36,7 +36,7 @@ export default function Contact() {
 
     try {
       const response = await fetch(
-        "https://formsubmit.co/ajax/lucasweacked21@gmail.com",
+        "https://formsubmit.co/ajax/contato.vpotech@gmail.com",
         {
           method: "POST",
           headers: {
@@ -102,10 +102,10 @@ export default function Contact() {
               Email
             </p>
             <a
-              href="mailto:devlucasbarros@gmail.com"
+              href="mailto:contato.vpotech@gmail.com"
               className="text-lg md:text-xl text-[#f7f7f7] hover:text-blue-400 transition-colors"
             >
-              devlucasbarros@gmail.com
+              contato.vpotech@gmail.com
             </a>
           </div>
 

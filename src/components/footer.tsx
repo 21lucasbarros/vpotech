@@ -86,10 +86,10 @@ export default function Footer() {
               <li className="flex items-center gap-2 text-[#f7f7f7]/70 text-sm">
                 <Mail className="w-4 h-4 text-[#f7f7f7]/50" />
                 <a
-                  href="mailto:contato@vpotech.com"
+                  href="mailto:contato.vpotech@gmail.com"
                   className="hover:text-[#f7f7f7] transition-colors"
                 >
-                  contato@vpotech.com
+                  contato.vpotech@gmail.com
                 </a>
               </li>
               <li className="flex items-center gap-2 text-[#f7f7f7]/70 text-sm">
