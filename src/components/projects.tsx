@@ -10,7 +10,7 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="min-h-screen py-12 sm:py-16 px-4 sm:px-8 lg:px-20"
+      className="min-h-screen py-12 sm:py-16 px-4 sm:px-8 lg:px-20 2xl:px-48 3xl:px-72 4xl:px-96"
     >
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -27,7 +27,7 @@ export default function Projects() {
         </p>
       </motion.div>
 
-      <div className="space-y-6">
+      <div className="space-y-6 2xl:space-y-10 3xl:space-y-14 4xl:space-y-20 max-w-screen-2xl w-full mx-auto">
         {projects.map((project, index) => (
           <motion.div
             key={project.title}

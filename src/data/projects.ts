@@ -2,8 +2,8 @@ export const projects = [
   {
     title: "Bricks E-Commerce",
     description:
-      "E-commerce completo desenvolvido para cliente com pagamentos Stripe, painel administrativo e gerenciamento de produtos.",
-    note: "Projeto pessoal desenvolvido por um dos integrantes da VPO Tech em parceria com seu primo e um amigo, não sendo um projeto oficial da VPO Tech.",
+      "E-commerce completo desenvolvido em projeto pessoal para cliente próprio dos desenvolvedores, com pagamentos Stripe, painel administrativo e gerenciamento de produtos.",
+    note: "Projeto pessoal desenvolvido por um dos integrantes da VPO Tech, em parceria com seu primo e um amigo, realizado antes e fora de qualquer vínculo contratual ou comercial com a VPO Tech. Não se trata de um projeto oficial da empresa.",
     technologies: [
       "Next.js",
       "TypeScript",
